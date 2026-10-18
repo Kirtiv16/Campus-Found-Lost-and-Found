@@ -76,7 +76,7 @@ export default function ItemCard({
         }
       }}
       aria-label={`View ${item.title}, ${item.type} item`}
-      className={`group relative flex flex-col bg-white rounded-2xl border border-zinc-200/80 shadow-xs hover:border-indigo-400/50 hover:shadow-xl hover:shadow-black/25 hover:-translate-y-1 active:scale-[0.99] transition-all duration-200 ease-out overflow-hidden cursor-pointer select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 animate-cardIn ${
+      className={`group relative flex flex-col bg-white rounded-xl border border-zinc-200/80 transition-all duration-200 hover:-translate-y-1 hover:border-zinc-750 overflow-hidden cursor-pointer select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 animate-cardIn ${
         highlighted ? 'ring-2 ring-indigo-500 shadow-md' : ''
       }`}
       style={{ animationDelay: `${Math.min(index * 30, 240)}ms` }}
@@ -111,13 +111,13 @@ export default function ItemCard({
       <div className="p-4 flex-1 flex flex-col justify-between">
         <div>
           {/* Title with 2-line clamp */}
-          <h3 className="font-display text-sm font-semibold text-zinc-900 leading-snug line-clamp-2 text-balance group-hover:text-indigo-600 transition-colors mb-2.5">
+          <h3 className="text-sm font-semibold text-zinc-900 leading-snug line-clamp-2 text-balance group-hover:text-indigo-600 transition-colors mb-2">
             {item.title}
           </h3>
 
           {/* Meta row: category · location · date */}
-          <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-xs text-zinc-500">
-            <span className="inline-flex items-center gap-1 font-medium text-zinc-600">
+          <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-xs text-zinc-400">
+            <span className="inline-flex items-center gap-1 font-medium text-zinc-400">
               <CategoryIcon className="w-3.5 h-3.5 text-zinc-400 shrink-0" />
               <span>{categoryLabel(item.category)}</span>
             </span>
@@ -142,26 +142,20 @@ export default function ItemCard({
         </div>
 
         {/* Card Footer */}
-        <div className="mt-4 pt-3 border-t border-zinc-100 flex items-center justify-between gap-2">
+        <div className="mt-4 pt-3 border-t border-zinc-100">
           {isClaimable ? (
-            <>
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation()
-                  if (onClaim) onClaim(item)
-                  else onOpen(item)
-                }}
-                className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium text-emerald-700 bg-emerald-50 hover:bg-emerald-100 active:bg-emerald-200 border border-emerald-200/90 rounded-lg transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600"
-              >
-                <PackageCheck className="w-3.5 h-3.5 shrink-0" />
-                <span>Claim</span>
-              </button>
-              <span className="text-xs font-medium text-zinc-400 group-hover:text-indigo-600 transition-colors inline-flex items-center gap-0.5">
-                Details
-                <ArrowUpRight className="w-3.5 h-3.5" />
-              </span>
-            </>
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation()
+                if (onClaim) onClaim(item)
+                else onOpen(item)
+              }}
+              className="w-full inline-flex items-center justify-center gap-1.5 h-9 px-3 text-xs font-medium text-emerald-700 bg-emerald-50 hover:bg-emerald-100 active:bg-emerald-200 border border-emerald-200/90 rounded-lg transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600"
+            >
+              <PackageCheck className="w-3.5 h-3.5 shrink-0" />
+              <span>Claim</span>
+            </button>
           ) : (
             <button
               type="button"
@@ -169,7 +163,7 @@ export default function ItemCard({
                 e.stopPropagation()
                 onOpen(item)
               }}
-              className="w-full inline-flex items-center justify-center gap-1 py-1.5 text-xs font-medium text-zinc-600 group-hover:text-indigo-600 group-hover:bg-indigo-50/50 bg-zinc-50 border border-zinc-200/70 rounded-lg transition-colors cursor-pointer"
+              className="w-full inline-flex items-center justify-center gap-1.5 h-9 px-3 text-xs font-medium text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 bg-zinc-50 border border-zinc-200/70 rounded-lg transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600"
             >
               <span>View details</span>
               <ArrowUpRight className="w-3.5 h-3.5" />

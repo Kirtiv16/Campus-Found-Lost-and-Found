@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Plus, SearchCheck, Sparkles } from 'lucide-react'
+import { Plus, SearchCheck } from 'lucide-react'
 import Button from './ui/Button'
 
 interface HeaderProps {
@@ -35,24 +35,14 @@ export default function Header({ onPost }: HeaderProps) {
           <div className="w-9 h-9 rounded-xl bg-indigo-600 flex items-center justify-center text-white shadow-xs shrink-0">
             <SearchCheck className="w-5 h-5 stroke-[2.2]" />
           </div>
-          <div>
-            <div className="flex items-baseline gap-1">
-              <span className="font-bold text-base sm:text-lg tracking-tight text-zinc-900">campus</span>
-              <span className="font-bold text-base sm:text-lg tracking-tight text-indigo-600">found</span>
-            </div>
-            <p className="text-[11px] leading-tight text-zinc-500 font-medium hidden sm:block">
-              Good things find their way back.
-            </p>
+          <div className="flex items-baseline gap-1">
+            <span className="font-semibold text-base sm:text-lg tracking-tight text-zinc-900">campus</span>
+            <span className="font-semibold text-base sm:text-lg tracking-tight text-indigo-600">found</span>
           </div>
         </a>
 
         {/* Right actions */}
         <div className="flex items-center gap-3 sm:gap-5">
-          <div className="hidden md:flex items-center gap-1.5 text-xs text-zinc-500 font-medium bg-zinc-50 px-3 py-1.5 rounded-full border border-zinc-200/70">
-            <Sparkles className="w-3.5 h-3.5 text-amber-500 shrink-0" />
-            <span>Community-powered board</span>
-          </div>
-
           <Button
             variant="primary"
             size="md"

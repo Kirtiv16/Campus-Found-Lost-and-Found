@@ -15,8 +15,7 @@ import PostItemModal from './components/PostItemModal'
 import MobileFilterSheet from './components/MobileFilterSheet'
 import ClaimConfirmModal from './components/ClaimConfirmModal'
 import Toast from './components/Toast'
-import Button from './components/ui/Button'
-import { Plus, Heart, SearchCheck, CheckCircle2, ShieldCheck } from 'lucide-react'
+import { Heart, SearchCheck } from 'lucide-react'
 
 const locations = locationsData as Location[]
 
@@ -92,97 +91,25 @@ export default function App() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative overflow-hidden border-b border-zinc-200/80 bg-gradient-to-br from-[#0b0a12] via-[#100d1b] to-[#0a0a10]">
-          {/* Subtle dot pattern background */}
-          <div
-            className="absolute inset-0 opacity-[0.06] pointer-events-none"
-            style={{
-              backgroundImage: 'radial-gradient(rgba(200, 180, 255, 0.7) 1px, transparent 1px)',
-              backgroundSize: '24px 24px',
-            }}
-            aria-hidden="true"
-          />
-
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 relative">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-              {/* Left Hero copy */}
-              <div className="lg:col-span-7 space-y-6 text-left">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/75 border border-zinc-200/90 shadow-xs text-zinc-700">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                  <span className="tracking-wide uppercase text-[11px] text-zinc-600">
-                    Your campus, looking out for you
-                  </span>
-                </div>
-
-                <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-900 leading-[1.08] text-balance">
-                  Lost things.{' '}
-                  <span className="text-indigo-600 block sm:inline">Found community.</span>
-                </h1>
-
-                <p className="text-base sm:text-lg text-zinc-600 leading-relaxed max-w-xl">
-                  That missing water bottle, your favourite hoodie, or the student ID you need for class. Let’s get it back into your hands.
-                </p>
-
-                <div className="flex flex-wrap items-center gap-4 pt-1">
-                  <Button
-                    variant="primary"
-                    size="lg"
-                    onClick={() => setPostOpen(true)}
-                    icon={<Plus className="w-4 h-4 stroke-[2.5]" />}
-                    className="shadow-sm hover:shadow"
-                  >
-                    Post a lost or found item
-                  </Button>
-
-                  <div className="flex items-center gap-2.5 text-xs text-zinc-500 bg-white/80 backdrop-blur-xs px-3.5 py-2 rounded-xl border border-zinc-200/70 shadow-xs">
-                    <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
-                    <span className="font-medium">Free &amp; open to all campus members</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Hero visual preview card */}
-              <div className="lg:col-span-5 flex justify-center lg:justify-end" aria-hidden="true">
-                <div className="relative w-full max-w-md">
-                  {/* Decorative backdrop glow */}
-                  <div className="absolute -inset-2 bg-gradient-to-tr from-indigo-500/25 via-sky-500/10 to-emerald-500/15 rounded-3xl blur-2xl" />
-
-                  {/* Clean preview card */}
-                  <div className="relative bg-white rounded-2xl border border-zinc-200/90 p-4 shadow-xl shadow-black/30 space-y-3">
-                    <div className="relative aspect-video rounded-xl overflow-hidden bg-zinc-100">
-                      <img
-                        src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=700&q=80"
-                        alt="Preview item"
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute top-2.5 left-2.5 bg-sky-50/95 text-sky-700 border border-sky-200/90 px-2.5 py-0.5 rounded-full text-xs font-semibold shadow-xs">
-                        Found
-                      </div>
-                      <div className="absolute top-2.5 right-2.5 bg-emerald-50/95 text-emerald-700 border border-emerald-200/90 px-2.5 py-0.5 rounded-full text-xs font-medium shadow-xs">
-                        Still looking
-                      </div>
-                    </div>
-
-                    <div className="flex items-center justify-between pt-1">
-                      <div>
-                        <p className="text-xs font-semibold text-zinc-900">
-                          Hydro Flask Wide Mouth (Olive)
-                        </p>
-                        <p className="text-[11px] text-zinc-500">Found near Student Union Lounge</p>
-                      </div>
-                      <span className="text-xs font-medium text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200/80">
-                        Safe with security
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <section className="border-b border-zinc-200/80 bg-zinc-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
+            <div className="max-w-2xl space-y-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-indigo-600">
+                Campus lost &amp; found
+              </p>
+              <h1 className="font-sans text-4xl sm:text-5xl font-semibold tracking-tight text-zinc-900 leading-tight text-balance">
+                Lost something?{' '}
+                <span className="text-zinc-500">Let’s get it back.</span>
+              </h1>
+              <p className="text-base text-zinc-500 leading-relaxed max-w-lg">
+                Browse recent posts or share an item you’ve found. A little help goes a long way.
+              </p>
             </div>
           </div>
         </section>
 
         {/* Noticeboard Section */}
-        <section ref={boardRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+        <section ref={boardRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
           {/* Sticky Filter Bar */}
           <FilterBar
             filters={filters}
