@@ -92,13 +92,13 @@ export default function App() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative overflow-hidden border-b border-zinc-200/80 bg-gradient-to-b from-white via-zinc-50/70 to-zinc-50">
+        <section className="relative overflow-hidden border-b border-zinc-200/80 bg-gradient-to-br from-[#0b0a12] via-[#100d1b] to-[#0a0a10]">
           {/* Subtle dot pattern background */}
           <div
-            className="absolute inset-0 opacity-[0.035] pointer-events-none"
+            className="absolute inset-0 opacity-[0.06] pointer-events-none"
             style={{
-              backgroundImage: 'radial-gradient(#18181b 1px, transparent 1px)',
-              backgroundSize: '20px 20px',
+              backgroundImage: 'radial-gradient(rgba(200, 180, 255, 0.7) 1px, transparent 1px)',
+              backgroundSize: '24px 24px',
             }}
             aria-hidden="true"
           />
@@ -107,14 +107,14 @@ export default function App() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Hero copy */}
               <div className="lg:col-span-7 space-y-6 text-left">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-white border border-zinc-200/90 shadow-xs text-zinc-700">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/75 border border-zinc-200/90 shadow-xs text-zinc-700">
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                   <span className="tracking-wide uppercase text-[11px] text-zinc-600">
                     Your campus, looking out for you
                   </span>
                 </div>
 
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-zinc-900 leading-[1.15] text-balance">
+                <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-900 leading-[1.08] text-balance">
                   Lost things.{' '}
                   <span className="text-indigo-600 block sm:inline">Found community.</span>
                 </h1>
@@ -145,10 +145,10 @@ export default function App() {
               <div className="lg:col-span-5 flex justify-center lg:justify-end" aria-hidden="true">
                 <div className="relative w-full max-w-md">
                   {/* Decorative backdrop glow */}
-                  <div className="absolute -inset-1.5 bg-gradient-to-tr from-indigo-500/10 via-sky-500/10 to-emerald-500/10 rounded-3xl blur-lg" />
+                  <div className="absolute -inset-2 bg-gradient-to-tr from-indigo-500/25 via-sky-500/10 to-emerald-500/15 rounded-3xl blur-2xl" />
 
                   {/* Clean preview card */}
-                  <div className="relative bg-white rounded-2xl border border-zinc-200/90 p-4 shadow-md space-y-3">
+                  <div className="relative bg-white rounded-2xl border border-zinc-200/90 p-4 shadow-xl shadow-black/30 space-y-3">
                     <div className="relative aspect-video rounded-xl overflow-hidden bg-zinc-100">
                       <img
                         src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=700&q=80"

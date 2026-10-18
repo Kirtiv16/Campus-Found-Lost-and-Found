@@ -76,7 +76,7 @@ export default function ItemCard({
         }
       }}
       aria-label={`View ${item.title}, ${item.type} item`}
-      className={`group relative flex flex-col bg-white rounded-2xl border border-zinc-200/80 shadow-xs hover:shadow-md hover:-translate-y-0.5 active:scale-[0.99] transition-all duration-200 ease-out overflow-hidden cursor-pointer select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 animate-cardIn ${
+      className={`group relative flex flex-col bg-white rounded-2xl border border-zinc-200/80 shadow-xs hover:border-indigo-400/50 hover:shadow-xl hover:shadow-black/25 hover:-translate-y-1 active:scale-[0.99] transition-all duration-200 ease-out overflow-hidden cursor-pointer select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 animate-cardIn ${
         highlighted ? 'ring-2 ring-indigo-500 shadow-md' : ''
       }`}
       style={{ animationDelay: `${Math.min(index * 30, 240)}ms` }}
@@ -111,7 +111,7 @@ export default function ItemCard({
       <div className="p-4 flex-1 flex flex-col justify-between">
         <div>
           {/* Title with 2-line clamp */}
-          <h3 className="text-sm font-semibold text-zinc-900 leading-snug line-clamp-2 text-balance group-hover:text-indigo-600 transition-colors mb-2.5">
+          <h3 className="font-display text-sm font-semibold text-zinc-900 leading-snug line-clamp-2 text-balance group-hover:text-indigo-600 transition-colors mb-2.5">
             {item.title}
           </h3>
 

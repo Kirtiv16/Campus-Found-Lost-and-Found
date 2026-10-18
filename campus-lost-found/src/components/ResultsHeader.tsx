@@ -48,7 +48,7 @@ export default function ResultsHeader({
           <p className="text-xs font-semibold uppercase tracking-wider text-indigo-600 mb-1">
             Campus noticeboard
           </p>
-          <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-zinc-900 text-balance">
+          <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-zinc-900 text-balance">
             Lost something? <span className="text-zinc-500 font-normal">Found something?</span>
           </h2>
           <p className="text-xs sm:text-sm text-zinc-500 mt-1">
