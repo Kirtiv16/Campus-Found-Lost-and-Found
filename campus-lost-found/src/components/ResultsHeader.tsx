@@ -43,20 +43,14 @@ export default function ResultsHeader({
 
   return (
     <div className="pt-6 pb-4">
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <div className="flex items-center justify-between gap-4">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-wider text-indigo-600 mb-1">
-            Campus noticeboard
-          </p>
-          <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-zinc-900 text-balance">
-            Lost something? <span className="text-zinc-500 font-normal">Found something?</span>
+          <h2 className="text-lg font-semibold tracking-tight text-zinc-900">
+            Recently posted
           </h2>
-          <p className="text-xs sm:text-sm text-zinc-500 mt-1">
-            A community-powered board to get everyday items back where they belong.
-          </p>
         </div>
 
-        <div className="flex flex-col items-start sm:items-end gap-1.5 shrink-0">
+        <div className="flex flex-col items-end gap-1.5 shrink-0">
           <p
             className="text-xs sm:text-sm text-zinc-600"
             aria-live="polite"

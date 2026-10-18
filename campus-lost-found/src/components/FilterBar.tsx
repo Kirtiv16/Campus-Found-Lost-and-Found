@@ -42,10 +42,10 @@ export default function FilterBar({
   }
 
   return (
-    <div className="sticky top-16 z-20 pt-4 pb-3">
-      <div className="bg-white/85 backdrop-blur-md border border-zinc-200/90 rounded-2xl p-2 sm:p-2.5 shadow-xs flex items-center gap-2.5">
+    <div className="sticky top-16 z-20 -mx-4 px-4 pt-3 pb-3 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 bg-[#0a0a10]/85 backdrop-blur-md border-b border-zinc-200/60">
+      <div className="flex flex-wrap items-center gap-3 xl:flex-nowrap">
         {/* Search input with leading icon, spinner, and clear button */}
-        <div className="relative flex-1 min-w-0">
+        <div className="relative flex-1 basis-[280px] min-w-0">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-zinc-400">
             <Search className="w-4 h-4 stroke-[2]" />
           </div>
@@ -94,7 +94,7 @@ export default function FilterBar({
         </button>
 
         {/* Desktop Filter Selects */}
-        <div className="hidden lg:flex items-center gap-2">
+        <div className="hidden lg:flex flex-wrap items-center gap-2.5 xl:flex-nowrap">
           {/* Category */}
           <div className="relative">
             <label htmlFor="category-select" className="sr-only">

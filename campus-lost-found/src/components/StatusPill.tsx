@@ -13,12 +13,12 @@ const statusConfig: Record<
   claimed: {
     label: 'Claimed',
     Icon: PackageCheck,
-    style: 'bg-amber-50/95 text-amber-800 border-amber-200/80',
+    style: 'bg-emerald-50/95 text-emerald-700 border-emerald-200/80',
   },
   returned: {
     label: 'Returned',
     Icon: CheckCircle2,
-    style: 'bg-zinc-100 text-zinc-700 border-zinc-200/90',
+    style: 'bg-zinc-100 text-zinc-500 border-zinc-300/80',
   },
 }
 

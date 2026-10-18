@@ -9,9 +9,9 @@
     --canvas: #0a0a10;
     --surface: #11111a;
     --border-subtle: rgba(255, 255, 255, 0.09);
-    --primary: #b5a0ff;
-    --primary-hover: #c7b8ff;
-    --primary-light: #211b37;
+    --primary: #ad9fd0;
+    --primary-hover: #b9acd8;
+    --primary-light: #211f29;
   }
 
   html {
@@ -48,31 +48,6 @@
 }
 
 @layer utilities {
-  .bg-white,
-  [class*='bg-white/'] {
-    background-color: #11111a !important;
-  }
-
-  .bg-white\/75 {
-    background-color: rgb(17 17 26 / 0.75) !important;
-  }
-
-  .bg-white\/80 {
-    background-color: rgb(17 17 26 / 0.8) !important;
-  }
-
-  .bg-white\/85 {
-    background-color: rgb(17 17 26 / 0.85) !important;
-  }
-
-  .bg-white\/90 {
-    background-color: rgb(17 17 26 / 0.9) !important;
-  }
-
-  .bg-white\/95 {
-    background-color: rgb(17 17 26 / 0.95) !important;
-  }
-
   .shimmer-bg {
     background-image: linear-gradient(
       90deg,
