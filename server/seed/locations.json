@@ -1,0 +1,50 @@
+[
+  {
+    "id": "lib-2f",
+    "name": "Main Library \u00b7 2nd floor",
+    "lat": 13.0827,
+    "lng": 80.2707
+  },
+  {
+    "id": "cafeteria",
+    "name": "Student Cafeteria",
+    "lat": 13.0834,
+    "lng": 80.2718
+  },
+  {
+    "id": "block-a",
+    "name": "Academic Block A",
+    "lat": 13.0819,
+    "lng": 80.2695
+  },
+  {
+    "id": "sports",
+    "name": "Sports Complex",
+    "lat": 13.0848,
+    "lng": 80.2731
+  },
+  {
+    "id": "hostel",
+    "name": "North Residence Hall",
+    "lat": 13.0851,
+    "lng": 80.2698
+  },
+  {
+    "id": "auditorium",
+    "name": "Auditorium foyer",
+    "lat": 13.0821,
+    "lng": 80.2725
+  },
+  {
+    "id": "lab-3",
+    "name": "Computer Lab 3",
+    "lat": 13.0812,
+    "lng": 80.2701
+  },
+  {
+    "id": "quad",
+    "name": "Central Quad",
+    "lat": 13.083,
+    "lng": 80.269
+  }
+]

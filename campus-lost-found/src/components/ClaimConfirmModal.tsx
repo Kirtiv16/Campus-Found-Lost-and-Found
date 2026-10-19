@@ -63,7 +63,7 @@ export default function ClaimConfirmModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 bg-zinc-900/40 backdrop-blur-xs flex items-center justify-center p-4 animate-fadeIn"
+      className="fixed inset-0 z-50 bg-black/40 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn"
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose()
       }}
@@ -73,7 +73,7 @@ export default function ClaimConfirmModal({
         role="dialog"
         aria-modal="true"
         aria-labelledby="claim-confirm-title"
-        className="w-full max-w-md bg-white rounded-2xl shadow-xl border border-zinc-200/80 p-6 relative animate-modalIn"
+        className="w-full max-w-md bg-white rounded-2xl shadow-2xl border border-zinc-200/80 p-6 relative animate-modalIn"
       >
         <button
           type="button"
