@@ -15,7 +15,7 @@ export default function TypeBadge({ type, className = '' }: TypeBadgeProps) {
 
   return (
     <span
-      className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-semibold tracking-wide border shadow-xs backdrop-blur-xs select-none ${styles} ${className}`}
+      className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-semibold tracking-wide border shadow-xs backdrop-blur-sm select-none ${styles} ${className}`}
     >
       {isLost ? (
         <Search className="w-3.5 h-3.5 shrink-0 stroke-[2.2]" aria-hidden="true" />

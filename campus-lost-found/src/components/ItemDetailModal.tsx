@@ -107,7 +107,7 @@ export default function ItemDetailModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 bg-zinc-900/40 backdrop-blur-xs flex items-center justify-center p-0 sm:p-4 md:p-6 animate-fadeIn"
+      className="fixed inset-0 z-50 bg-black/40 backdrop-blur-md flex items-center justify-center p-0 sm:p-4 md:p-6 animate-fadeIn"
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose()
       }}
@@ -117,7 +117,7 @@ export default function ItemDetailModal({
         role="dialog"
         aria-modal="true"
         aria-labelledby="detail-title"
-        className="w-full h-full sm:h-auto sm:max-h-[90vh] sm:max-w-3xl bg-white sm:rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row relative animate-modalIn"
+        className="w-full h-full sm:h-auto sm:max-h-[90vh] sm:max-w-3xl bg-white sm:rounded-2xl border border-zinc-200/80 shadow-2xl overflow-hidden flex flex-col md:flex-row relative animate-modalIn"
       >
         {/* Floating close button */}
         <button
@@ -125,7 +125,7 @@ export default function ItemDetailModal({
           type="button"
           onClick={onClose}
           aria-label="Close item details"
-          className="absolute top-3 right-3 z-20 p-2 rounded-xl bg-white/90 backdrop-blur-xs text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 border border-zinc-200/80 shadow-xs transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600"
+          className="absolute top-3 right-3 z-20 p-2 rounded-xl bg-white/90 backdrop-blur-sm text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 border border-zinc-200/80 shadow-xs transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600"
         >
           <X className="w-5 h-5" />
         </button>

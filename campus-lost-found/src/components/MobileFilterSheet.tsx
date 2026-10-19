@@ -66,7 +66,7 @@ export default function MobileFilterSheet({
 
   return (
     <div
-      className="fixed inset-0 z-50 bg-zinc-900/40 backdrop-blur-xs flex items-end justify-center animate-fadeIn"
+      className="fixed inset-0 z-50 bg-black/40 backdrop-blur-md flex items-end justify-center animate-fadeIn"
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose()
       }}
