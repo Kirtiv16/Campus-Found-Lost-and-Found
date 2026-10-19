@@ -58,7 +58,7 @@ export default function PostItemModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 bg-zinc-900/40 backdrop-blur-xs flex items-center justify-center p-0 sm:p-4 md:p-6 animate-fadeIn"
+      className="fixed inset-0 z-50 bg-black/40 backdrop-blur-md flex items-center justify-center p-0 sm:p-4 md:p-6 animate-fadeIn"
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose()
       }}
@@ -68,14 +68,14 @@ export default function PostItemModal({
         role="dialog"
         aria-modal="true"
         aria-label="Post a lost or found item"
-        className="w-full h-full sm:h-auto sm:max-h-[90vh] sm:max-w-2xl bg-white sm:rounded-2xl shadow-xl overflow-y-auto relative animate-modalIn"
+        className="w-full h-full sm:h-auto sm:max-h-[90vh] sm:max-w-2xl bg-white sm:rounded-2xl border border-zinc-200/80 shadow-2xl overflow-y-auto relative animate-modalIn"
       >
         {/* Floating close button */}
         <button
           type="button"
           onClick={onClose}
           aria-label="Close post form"
-          className="absolute top-4 right-4 z-20 p-2 rounded-xl bg-white/90 backdrop-blur-xs text-zinc-400 hover:text-zinc-700 hover:bg-zinc-100 border border-zinc-200/80 shadow-xs transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600"
+          className="absolute top-4 right-4 z-20 p-2 rounded-xl bg-white/90 backdrop-blur-sm text-zinc-400 hover:text-zinc-700 hover:bg-zinc-100 border border-zinc-200/80 shadow-xs transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600"
         >
           <X className="w-5 h-5" />
         </button>
