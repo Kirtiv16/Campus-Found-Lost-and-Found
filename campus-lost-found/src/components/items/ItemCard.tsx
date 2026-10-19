@@ -13,11 +13,11 @@ import {
   Watch,
   Package,
 } from 'lucide-react'
-import type { Item, Location, Filters, Category } from '../types'
-import { categoryLabel } from '../data/categories'
-import { distanceFor } from '../lib/filterSort'
-import TypeBadge from './TypeBadge'
-import StatusPill from './StatusPill'
+import type { Item, Location, Filters, Category } from '../../types'
+import { categoryLabel } from '../../data/categories'
+import { distanceFor } from '../../utils/filterSort'
+import TypeBadge from '../common/TypeBadge'
+import StatusPill from '../common/StatusPill'
 
 interface ItemCardProps {
   item: Item
@@ -76,13 +76,13 @@ export default function ItemCard({
         }
       }}
       aria-label={`View ${item.title}, ${item.type} item`}
-      className={`group relative flex flex-col bg-white rounded-xl border border-zinc-200/80 transition-all duration-200 hover:-translate-y-1 hover:border-zinc-750 overflow-hidden cursor-pointer select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 animate-cardIn ${
-        highlighted ? 'ring-2 ring-indigo-500 shadow-md' : ''
+      className={`group relative flex flex-col bg-zinc-900/60 backdrop-blur-lg rounded-2xl border border-white/10 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-violet-400/40 hover:shadow-[0_14px_40px_rgba(0,0,0,0.28),0_0_24px_rgba(139,92,246,0.08)] overflow-hidden cursor-pointer select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 animate-cardIn ${
+        highlighted ? 'ring-2 ring-violet-400 shadow-[0_0_24px_rgba(139,92,246,0.2)]' : ''
       }`}
       style={{ animationDelay: `${Math.min(index * 30, 240)}ms` }}
     >
       {/* Media container */}
-      <div className="relative aspect-video w-full overflow-hidden bg-zinc-100">
+      <div className="relative aspect-[16/10] w-full overflow-hidden bg-zinc-800">
         {!broken ? (
           <img
             src={item.imageUrl}
@@ -92,7 +92,7 @@ export default function ItemCard({
             className="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-[1.02]"
           />
         ) : (
-          <div className="w-full h-full flex flex-col items-center justify-center gap-1.5 text-zinc-400 bg-zinc-50/80">
+          <div className="w-full h-full flex flex-col items-center justify-center gap-1.5 text-zinc-400 bg-zinc-800/80">
             <CategoryIcon className="w-8 h-8 text-zinc-300 stroke-[1.6]" />
             <span className="text-[11px] font-medium text-zinc-500">{categoryLabel(item.category)}</span>
           </div>
@@ -111,22 +111,22 @@ export default function ItemCard({
       <div className="p-4 flex-1 flex flex-col justify-between">
         <div>
           {/* Title with 2-line clamp */}
-          <h3 className="text-sm font-semibold text-zinc-900 leading-snug line-clamp-2 text-balance group-hover:text-indigo-600 transition-colors mb-2">
+          <h3 className="text-sm font-semibold text-zinc-100 leading-snug line-clamp-2 text-balance group-hover:text-violet-300 transition-colors mb-2">
             {item.title}
           </h3>
 
           {/* Meta row: category · location · date */}
           <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-xs text-zinc-400">
-            <span className="inline-flex items-center gap-1 font-medium text-zinc-400">
+            <span className="inline-flex items-center gap-1 font-medium text-zinc-300">
               <CategoryIcon className="w-3.5 h-3.5 text-zinc-400 shrink-0" />
               <span>{categoryLabel(item.category)}</span>
             </span>
-            <span className="text-zinc-300 font-normal">·</span>
+            <span className="text-zinc-600 font-normal">·</span>
             <span className="inline-flex items-center gap-1 truncate max-w-[150px]">
               <MapPin className="w-3.5 h-3.5 text-zinc-400 shrink-0" />
               <span className="truncate">{location?.name ?? item.locationId}</span>
             </span>
-            <span className="text-zinc-300 font-normal">·</span>
+            <span className="text-zinc-600 font-normal">·</span>
             <span className="inline-flex items-center gap-1 tabular-nums whitespace-nowrap">
               <CalendarDays className="w-3.5 h-3.5 text-zinc-400 shrink-0" />
               <span>{formattedDate}</span>
@@ -135,14 +135,14 @@ export default function ItemCard({
 
           {/* Optional distance when nearest sort active */}
           {distance !== null && (
-            <div className="mt-2 text-xs font-semibold text-indigo-600 tabular-nums flex items-center gap-1">
+            <div className="mt-2 text-xs font-semibold text-violet-300 tabular-nums flex items-center gap-1">
               <span>{distance.toFixed(1)} km away</span>
             </div>
           )}
         </div>
 
         {/* Card Footer */}
-        <div className="mt-4 pt-3 border-t border-zinc-100">
+        <div className="mt-4 pt-3 border-t border-white/10">
           {isClaimable ? (
             <button
               type="button"
@@ -151,10 +151,10 @@ export default function ItemCard({
                 if (onClaim) onClaim(item)
                 else onOpen(item)
               }}
-              className="w-full inline-flex items-center justify-center gap-1.5 h-9 px-3 text-xs font-medium text-emerald-700 bg-emerald-50 hover:bg-emerald-100 active:bg-emerald-200 border border-emerald-200/90 rounded-lg transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600"
+              className="w-full inline-flex items-center justify-center gap-1.5 h-9 px-3 text-xs font-semibold text-white bg-indigo-600 hover:bg-violet-500 active:bg-violet-600 border border-indigo-500/50 rounded-xl shadow-[0_0_18px_rgba(99,102,241,0.18)] hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] transition-all duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400"
             >
               <PackageCheck className="w-3.5 h-3.5 shrink-0" />
-              <span>Claim</span>
+              <span>Claim item</span>
             </button>
           ) : (
             <button
@@ -163,7 +163,7 @@ export default function ItemCard({
                 e.stopPropagation()
                 onOpen(item)
               }}
-              className="w-full inline-flex items-center justify-center gap-1.5 h-9 px-3 text-xs font-medium text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 bg-zinc-50 border border-zinc-200/70 rounded-lg transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600"
+              className="w-full inline-flex items-center justify-center gap-1.5 h-9 px-3 text-xs font-semibold text-white bg-indigo-600 hover:bg-violet-500 active:bg-violet-600 border border-indigo-500/50 rounded-xl shadow-[0_0_18px_rgba(99,102,241,0.18)] hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] transition-all duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400"
             >
               <span>View details</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
