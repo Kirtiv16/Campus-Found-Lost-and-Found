@@ -21,7 +21,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     const variantStyles = {
       primary:
-        'bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white shadow-sm hover:shadow border border-indigo-600 hover:border-indigo-700',
+        'bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-zinc-900 shadow-[0_0_20px_rgba(99,102,241,0.18)] hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] border border-indigo-600 hover:border-indigo-700',
       secondary:
         'bg-white hover:bg-zinc-50 active:bg-zinc-100 text-zinc-700 hover:text-zinc-900 border border-zinc-200/90 shadow-sm',
       ghost:
@@ -51,4 +51,3 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
 Button.displayName = 'Button'
 export default Button
-

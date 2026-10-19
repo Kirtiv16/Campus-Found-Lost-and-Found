@@ -1,4 +1,4 @@
-import type { Item, Location, Filters } from '../types'
+import type { Item, Location, Filters } from '../../types'
 import ItemCard from './ItemCard'
 import ItemCardSkeleton from './ItemCardSkeleton'
 

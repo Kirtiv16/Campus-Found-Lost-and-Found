@@ -88,14 +88,14 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 flex flex-col font-sans text-zinc-100 selection:bg-violet-500/30 selection:text-white">
+    <div className="min-h-screen bg-slate-950 flex flex-col font-sans text-zinc-900 selection:bg-violet-500/30 selection:text-[#fff]">
       <Header onPost={() => setPostOpen(true)} />
 
       <main className="flex-1">
         <HeroSection />
 
         {/* Noticeboard Section */}
-        <section ref={boardRef} className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+        <section id="noticeboard" ref={boardRef} className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
           {/* Sticky Filter Bar */}
           <FilterBar
             filters={filters}

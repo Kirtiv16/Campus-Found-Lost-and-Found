@@ -1,7 +1,7 @@
 import { SearchX, PackageOpen, Plus, RotateCcw, AlertTriangle, X } from 'lucide-react'
-import type { Filters, Location } from '../types'
-import { categoryLabel } from '../data/categories'
-import Button from './ui/Button'
+import type { Filters, Location } from '../../types'
+import { categoryLabel } from '../../data/categories'
+import Button from './Button'
 
 interface EmptyStateProps {
   kind: 'fresh' | 'filtered' | 'error'

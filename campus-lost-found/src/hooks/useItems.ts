@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import { claimItem, createItem, fetchItems } from '../lib/service'
+import { claimItem, createItem, fetchItems } from '../utils/service'
 import type { Item } from '../types'
 export function useItems(onError: (message: string) => void) {
   const [items, setItems] = useState<Item[]>([])

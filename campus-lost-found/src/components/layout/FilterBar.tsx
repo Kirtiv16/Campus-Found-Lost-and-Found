@@ -58,7 +58,7 @@ export default function FilterBar({
             value={filters.q}
             onChange={(e) => update('q', e.target.value)}
             placeholder="Search items, places, people…"
-            className="w-full h-10 pl-9 pr-9 text-sm bg-zinc-900/70 hover:bg-zinc-900 focus:bg-zinc-900 text-zinc-100 placeholder:text-zinc-500 border border-white/10 rounded-lg focus:outline-none focus:border-violet-400 focus:ring-1 focus:ring-violet-400 transition-colors"
+            className="w-full h-10 pl-9 pr-9 text-sm bg-[#11111a]/90 hover:bg-[#171720] focus:bg-[#171720] text-zinc-800 placeholder:text-zinc-500 border border-white/10 rounded-lg focus:outline-none focus:border-violet-400 focus:ring-1 focus:ring-violet-400 transition-colors"
           />
           <div className="absolute inset-y-0 right-0 pr-2 flex items-center">
             {searching ? (
@@ -80,7 +80,7 @@ export default function FilterBar({
         <button
           type="button"
           onClick={onMobileFilters}
-          className="lg:hidden relative inline-flex items-center gap-2 h-10 px-3 text-xs sm:text-sm font-medium bg-zinc-900 hover:bg-zinc-800 active:bg-zinc-800 text-zinc-200 border border-white/10 rounded-lg transition-colors shrink-0 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400"
+          className="lg:hidden relative inline-flex items-center gap-2 h-10 px-3 text-xs sm:text-sm font-medium bg-[#171720] hover:bg-[#22222e] active:bg-[#22222e] text-zinc-800 border border-white/10 rounded-lg transition-colors shrink-0 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400"
           aria-label="Open filter settings"
         >
           <SlidersHorizontal className="w-4 h-4" />
@@ -104,11 +104,11 @@ export default function FilterBar({
               id="category-select"
               value={filters.category}
               onChange={(e) => update('category', e.target.value as Filters['category'])}
-              className="h-10 text-xs font-medium text-zinc-200 bg-zinc-900/70 hover:bg-zinc-800 border border-white/10 rounded-lg pl-3 pr-8 focus:outline-none focus:border-violet-400 focus:ring-1 focus:ring-violet-400 cursor-pointer transition-colors"
+              className="h-10 text-xs font-medium text-zinc-800 bg-[#11111a]/90 hover:bg-[#171720] border border-white/10 rounded-lg pl-3 pr-8 focus:outline-none focus:border-violet-400 focus:ring-1 focus:ring-violet-400 cursor-pointer transition-colors"
             >
-              <option className="bg-slate-900 text-zinc-100" value="">All categories</option>
+              <option className="bg-slate-900 text-zinc-900" value="">All categories</option>
               {categories.map((c) => (
-                <option className="bg-slate-900 text-zinc-100" key={c.value} value={c.value}>
+                <option className="bg-slate-900 text-zinc-900" key={c.value} value={c.value}>
                   {c.label}
                 </option>
               ))}
@@ -124,11 +124,11 @@ export default function FilterBar({
               id="location-select"
               value={filters.locationId}
               onChange={(e) => update('locationId', e.target.value)}
-              className="h-10 text-xs font-medium text-zinc-200 bg-zinc-900/70 hover:bg-zinc-800 border border-white/10 rounded-lg pl-3 pr-8 focus:outline-none focus:border-violet-400 focus:ring-1 focus:ring-violet-400 cursor-pointer transition-colors max-w-[170px] truncate"
+              className="h-10 text-xs font-medium text-zinc-800 bg-[#11111a]/90 hover:bg-[#171720] border border-white/10 rounded-lg pl-3 pr-8 focus:outline-none focus:border-violet-400 focus:ring-1 focus:ring-violet-400 cursor-pointer transition-colors max-w-[170px] truncate"
             >
-              <option className="bg-slate-900 text-zinc-100" value="">All locations</option>
+              <option className="bg-slate-900 text-zinc-900" value="">All locations</option>
               {locations.map((l) => (
-                <option className="bg-slate-900 text-zinc-100" key={l.id} value={l.id}>
+                <option className="bg-slate-900 text-zinc-900" key={l.id} value={l.id}>
                   {l.name}
                 </option>
               ))}
@@ -144,12 +144,12 @@ export default function FilterBar({
               id="status-select"
               value={filters.status}
               onChange={(e) => update('status', e.target.value as Filters['status'])}
-              className="h-10 text-xs font-medium text-zinc-200 bg-zinc-900/70 hover:bg-zinc-800 border border-white/10 rounded-lg pl-3 pr-8 focus:outline-none focus:border-violet-400 focus:ring-1 focus:ring-violet-400 cursor-pointer transition-colors"
+              className="h-10 text-xs font-medium text-zinc-800 bg-[#11111a]/90 hover:bg-[#171720] border border-white/10 rounded-lg pl-3 pr-8 focus:outline-none focus:border-violet-400 focus:ring-1 focus:ring-violet-400 cursor-pointer transition-colors"
             >
-              <option className="bg-slate-900 text-zinc-100" value="">Any status</option>
-              <option className="bg-slate-900 text-zinc-100" value="open">Still looking</option>
-              <option className="bg-slate-900 text-zinc-100" value="claimed">Claimed</option>
-              <option className="bg-slate-900 text-zinc-100" value="returned">Returned</option>
+              <option className="bg-slate-900 text-zinc-900" value="">Any status</option>
+              <option className="bg-slate-900 text-zinc-900" value="open">Still looking</option>
+              <option className="bg-slate-900 text-zinc-900" value="claimed">Claimed</option>
+              <option className="bg-slate-900 text-zinc-900" value="returned">Returned</option>
             </select>
           </div>
 
@@ -162,11 +162,11 @@ export default function FilterBar({
               id="sort-select"
               value={filters.sort}
               onChange={(e) => update('sort', e.target.value as Filters['sort'])}
-              className="h-10 text-xs font-medium text-zinc-200 bg-zinc-900/70 hover:bg-zinc-800 border border-white/10 rounded-lg pl-3 pr-8 focus:outline-none focus:border-violet-400 focus:ring-1 focus:ring-violet-400 cursor-pointer transition-colors"
+              className="h-10 text-xs font-medium text-zinc-800 bg-[#11111a]/90 hover:bg-[#171720] border border-white/10 rounded-lg pl-3 pr-8 focus:outline-none focus:border-violet-400 focus:ring-1 focus:ring-violet-400 cursor-pointer transition-colors"
             >
-              <option className="bg-slate-900 text-zinc-100" value="newest">Newest first</option>
-              <option className="bg-slate-900 text-zinc-100" value="oldest">Oldest first</option>
-              <option className="bg-slate-900 text-zinc-100" value="nearest">Nearest to…</option>
+              <option className="bg-slate-900 text-zinc-900" value="newest">Newest first</option>
+              <option className="bg-slate-900 text-zinc-900" value="oldest">Oldest first</option>
+              <option className="bg-slate-900 text-zinc-900" value="nearest">Nearest to…</option>
             </select>
           </div>
 

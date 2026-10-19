@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { X } from 'lucide-react'
-import type { Item, Location } from '../types'
+import type { Item, Location } from '../../types'
 import PostItemForm from './PostItemForm'
 
 interface PostItemModalProps {

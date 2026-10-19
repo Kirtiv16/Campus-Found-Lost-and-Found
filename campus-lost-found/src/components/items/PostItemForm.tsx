@@ -11,10 +11,10 @@ import {
   Check,
   ShieldCheck,
 } from 'lucide-react'
-import type { Category, Item, ItemType, Location } from '../types'
-import { categories } from '../data/categories'
-import { itemSchema, validateField, type ItemFormValues } from '../lib/validation'
-import Button from './ui/Button'
+import type { Category, Item, ItemType, Location } from '../../types'
+import { categories } from '../../data/categories'
+import { itemSchema, validateField, type ItemFormValues } from '../../utils/validation'
+import Button from '../common/Button'
 
 interface PostItemFormProps {
   locations: Location[]

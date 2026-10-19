@@ -1,6 +1,6 @@
 import { MapPin, X } from 'lucide-react'
-import type { Filters, Location } from '../types'
-import { categoryLabel } from '../data/categories'
+import type { Filters, Location } from '../../types'
+import { categoryLabel } from '../../data/categories'
 
 interface ResultsHeaderProps {
   count: number
@@ -63,14 +63,14 @@ export default function ResultsHeader({
           </p>
 
           {filters.sort === 'nearest' && (
-            <div className="flex items-center gap-1.5 text-xs text-zinc-500 bg-white px-2.5 py-1 rounded-lg border border-zinc-200/80 shadow-xs">
+            <div className="flex items-center gap-1.5 text-xs text-zinc-500 bg-[#11111a] px-2.5 py-1 rounded-lg border border-white/10 shadow-xs">
               <MapPin className="w-3.5 h-3.5 text-indigo-600 shrink-0" />
               <span>Near:</span>
               <select
                 aria-label="Nearest sort starting location"
                 value={filters.userLocationId}
                 onChange={(e) => onUpdate('userLocationId', e.target.value)}
-                className="bg-transparent font-medium text-indigo-700 hover:text-indigo-800 focus:outline-none focus:ring-1 focus:ring-indigo-600 rounded px-1 py-0.5 text-xs cursor-pointer max-w-[160px] truncate"
+                className="bg-transparent font-medium text-violet-300 hover:text-violet-200 focus:outline-none focus:ring-1 focus:ring-violet-400 rounded px-1 py-0.5 text-xs cursor-pointer max-w-[160px] truncate"
               >
                 <option value="">Choose campus location</option>
                 {locations.map((l) => (
@@ -93,7 +93,7 @@ export default function ResultsHeader({
               key={chip.key}
               type="button"
               onClick={() => onRemove(chip.key)}
-              className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-indigo-50/90 text-indigo-700 border border-indigo-200/80 hover:bg-indigo-100/90 transition-colors cursor-pointer group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600"
+              className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-violet-500/10 text-violet-200 border border-violet-300/20 hover:bg-violet-500/20 transition-colors cursor-pointer group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400"
             >
               <span>{chip.label}</span>
               <X className="w-3.5 h-3.5 text-indigo-500 group-hover:text-indigo-700 transition-colors" />

@@ -46,6 +46,8 @@ Its scripts are `npm run dev`, `npm test`, `npm run build`, and `npm start`.
 ## Frontend behavior
 
 - Responsive item grid, detail dialog, and mobile filter sheet.
+- Dark charcoal interface with violet/cyan ambient lighting, glass panels, and
+  reduced-motion-aware item interactions.
 - Combined search/category/location/status filters. Search is debounced at 300ms;
   dropdowns update immediately.
 - Newest, oldest, and nearest sorting. Nearest uses haversine distance between
@@ -57,6 +59,30 @@ Its scripts are `npm run dev`, `npm test`, `npm run build`, and `npm start`.
 - Claim confirmation for open found items and toast announcements.
 - Focus-managed dialogs, Escape handling, focus trap, visible focus rings, and
   reduced-motion support.
+
+## Frontend structure
+
+The frontend groups UI by responsibility while keeping data fetching and filter
+state in reusable hooks:
+
+```text
+src/
+├── assets/                  # Add local logos, illustrations, and fallback media here
+├── components/
+│   ├── common/              # Buttons, badges, empty states, and toast UI
+│   ├── items/               # Item cards, grid, forms, and item dialogs
+│   └── layout/              # Header, hero, filters, result summary, and footer
+├── data/                    # Categories and item/location seed data
+├── hooks/                   # Debounced search, filters, and item/API state
+├── styles/                  # Global styles, theme tokens, and animations
+├── types/                   # Shared item, category, location, and filter types
+└── utils/                   # API client, filtering, geography, date formatting, and validation
+```
+
+`context/` is intentionally not introduced yet: the current state is scoped to
+the board and is already isolated behind hooks, so a provider layer would add
+indirection without improving reuse. Add it when state needs to be shared across
+independent routes or feature trees.
 
 ## Scripts
 

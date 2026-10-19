@@ -1,5 +1,5 @@
 import { CheckCircle2, Clock3, PackageCheck } from 'lucide-react'
-import type { ItemStatus } from '../types'
+import type { ItemStatus } from '../../types'
 
 const statusConfig: Record<
   ItemStatus,
@@ -8,17 +8,17 @@ const statusConfig: Record<
   open: {
     label: 'Still looking',
     Icon: Clock3,
-    style: 'bg-emerald-50/95 text-emerald-700 border-emerald-200/80',
+    style: 'bg-emerald-500/10 text-emerald-700 border-emerald-400/20',
   },
   claimed: {
     label: 'Claimed',
     Icon: PackageCheck,
-    style: 'bg-emerald-50/95 text-emerald-700 border-emerald-200/80',
+    style: 'bg-white/5 text-zinc-400 border-white/10',
   },
   returned: {
     label: 'Returned',
     Icon: CheckCircle2,
-    style: 'bg-zinc-100 text-zinc-500 border-zinc-300/80',
+    style: 'bg-white/5 text-zinc-400 border-white/10',
   },
 }
 

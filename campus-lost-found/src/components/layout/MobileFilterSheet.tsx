@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react'
 import { X, RotateCcw } from 'lucide-react'
-import type { Filters, Location } from '../types'
-import { categories } from '../data/categories'
-import Button from './ui/Button'
+import type { Filters, Location } from '../../types'
+import { categories } from '../../data/categories'
+import Button from '../common/Button'
 
 interface MobileFilterSheetProps {
   open: boolean
@@ -76,15 +76,15 @@ export default function MobileFilterSheet({
         role="dialog"
         aria-modal="true"
         aria-labelledby="mobile-filter-title"
-        className="w-full max-h-[88vh] bg-white rounded-t-2xl shadow-xl flex flex-col animate-sheetIn overflow-hidden"
+        className="w-full max-h-[88vh] bg-[#11111a] rounded-t-2xl shadow-xl flex flex-col animate-sheetIn overflow-hidden border border-white/10"
       >
         {/* Drag handle */}
         <div className="pt-3 pb-2 flex justify-center shrink-0">
-          <div className="w-10 h-1.5 bg-zinc-200 rounded-full" />
+          <div className="w-10 h-1.5 bg-zinc-400/60 rounded-full" />
         </div>
 
         {/* Header */}
-        <div className="px-5 py-3 border-b border-zinc-100 flex items-center justify-between shrink-0">
+        <div className="px-5 py-3 border-b border-white/10 flex items-center justify-between shrink-0">
           <div>
             <h2 id="mobile-filter-title" className="text-base font-semibold text-zinc-900">
               Filter items
@@ -94,7 +94,7 @@ export default function MobileFilterSheet({
           <button
             type="button"
             onClick={onClose}
-            className="p-2 rounded-lg text-zinc-400 hover:text-zinc-600 hover:bg-zinc-100 transition-colors cursor-pointer"
+            className="p-2 rounded-lg text-zinc-400 hover:text-zinc-200 hover:bg-white/10 transition-colors cursor-pointer"
             aria-label="Close filters"
           >
             <X className="w-5 h-5" />
@@ -112,7 +112,7 @@ export default function MobileFilterSheet({
               id="m-category"
               value={filters.category}
               onChange={(e) => update('category', e.target.value as Filters['category'])}
-              className="w-full h-11 px-3 text-sm bg-zinc-50 border border-zinc-200 rounded-lg text-zinc-800 focus:bg-white focus:outline-none focus:border-indigo-600 focus:ring-1 focus:ring-indigo-600 cursor-pointer"
+              className="w-full h-11 px-3 text-sm bg-[#171720] border border-white/10 rounded-lg text-zinc-800 focus:bg-[#1c1c28] focus:outline-none focus:border-violet-400 focus:ring-1 focus:ring-violet-400 cursor-pointer"
             >
               <option value="">All categories</option>
               {categories.map((c) => (
@@ -132,7 +132,7 @@ export default function MobileFilterSheet({
               id="m-location"
               value={filters.locationId}
               onChange={(e) => update('locationId', e.target.value)}
-              className="w-full h-11 px-3 text-sm bg-zinc-50 border border-zinc-200 rounded-lg text-zinc-800 focus:bg-white focus:outline-none focus:border-indigo-600 focus:ring-1 focus:ring-indigo-600 cursor-pointer"
+              className="w-full h-11 px-3 text-sm bg-[#171720] border border-white/10 rounded-lg text-zinc-800 focus:bg-[#1c1c28] focus:outline-none focus:border-violet-400 focus:ring-1 focus:ring-violet-400 cursor-pointer"
             >
               <option value="">All locations</option>
               {locations.map((l) => (
@@ -152,7 +152,7 @@ export default function MobileFilterSheet({
               id="m-status"
               value={filters.status}
               onChange={(e) => update('status', e.target.value as Filters['status'])}
-              className="w-full h-11 px-3 text-sm bg-zinc-50 border border-zinc-200 rounded-lg text-zinc-800 focus:bg-white focus:outline-none focus:border-indigo-600 focus:ring-1 focus:ring-indigo-600 cursor-pointer"
+              className="w-full h-11 px-3 text-sm bg-[#171720] border border-white/10 rounded-lg text-zinc-800 focus:bg-[#1c1c28] focus:outline-none focus:border-violet-400 focus:ring-1 focus:ring-violet-400 cursor-pointer"
             >
               <option value="">Any status</option>
               <option value="open">Still looking</option>
@@ -170,7 +170,7 @@ export default function MobileFilterSheet({
               id="m-sort"
               value={filters.sort}
               onChange={(e) => update('sort', e.target.value as Filters['sort'])}
-              className="w-full h-11 px-3 text-sm bg-zinc-50 border border-zinc-200 rounded-lg text-zinc-800 focus:bg-white focus:outline-none focus:border-indigo-600 focus:ring-1 focus:ring-indigo-600 cursor-pointer"
+              className="w-full h-11 px-3 text-sm bg-[#171720] border border-white/10 rounded-lg text-zinc-800 focus:bg-[#1c1c28] focus:outline-none focus:border-violet-400 focus:ring-1 focus:ring-violet-400 cursor-pointer"
             >
               <option value="newest">Newest first</option>
               <option value="oldest">Oldest first</option>
@@ -180,7 +180,7 @@ export default function MobileFilterSheet({
 
           {/* Nearest Starting Location (conditional) */}
           {filters.sort === 'nearest' && (
-            <div className="space-y-1.5 pt-2 border-t border-zinc-100">
+            <div className="space-y-1.5 pt-2 border-t border-white/10">
               <label htmlFor="m-user-location" className="block text-xs font-medium text-indigo-700">
                 Your campus starting point
               </label>
@@ -188,7 +188,7 @@ export default function MobileFilterSheet({
                 id="m-user-location"
                 value={filters.userLocationId}
                 onChange={(e) => update('userLocationId', e.target.value)}
-                className="w-full h-11 px-3 text-sm bg-indigo-50/50 border border-indigo-200 rounded-lg text-zinc-800 focus:bg-white focus:outline-none focus:border-indigo-600 focus:ring-1 focus:ring-indigo-600 cursor-pointer"
+                className="w-full h-11 px-3 text-sm bg-violet-500/10 border border-violet-300/20 rounded-lg text-zinc-800 focus:bg-[#1c1c28] focus:outline-none focus:border-violet-400 focus:ring-1 focus:ring-violet-400 cursor-pointer"
               >
                 <option value="">Choose your location</option>
                 {locations.map((l) => (
@@ -203,7 +203,7 @@ export default function MobileFilterSheet({
 
         {/* Footer Actions with Safe Area Bottom Padding */}
         <div
-          className="p-4 border-t border-zinc-100 bg-zinc-50/70 flex items-center gap-3 shrink-0"
+          className="p-4 border-t border-white/10 bg-[#0b0f17] flex items-center gap-3 shrink-0"
           style={{ paddingBottom: 'max(1rem, env(safe-area-inset-bottom, 1rem))' }}
         >
           <Button

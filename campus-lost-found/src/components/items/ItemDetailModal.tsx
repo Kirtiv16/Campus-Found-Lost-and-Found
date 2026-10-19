@@ -16,11 +16,12 @@ import {
   Watch,
   Package,
 } from 'lucide-react'
-import type { Item, Location, Category } from '../types'
-import { categoryLabel } from '../data/categories'
-import TypeBadge from './TypeBadge'
-import StatusPill from './StatusPill'
-import Button from './ui/Button'
+import type { Item, Location, Category } from '../../types'
+import { categoryLabel } from '../../data/categories'
+import { formatItemDate } from '../../utils/formatDate'
+import TypeBadge from '../common/TypeBadge'
+import StatusPill from '../common/StatusPill'
+import Button from '../common/Button'
 
 interface ItemDetailModalProps {
   item: Item | null
@@ -99,7 +100,7 @@ export default function ItemDetailModal({
 
   const CategoryIcon = categoryIcons[item.category] || Tag
   const isClaimable = item.type === 'found' && item.status === 'open'
-  const formattedDate = new Date(item.dateOccurred + 'T12:00:00').toLocaleDateString('en-US', {
+  const formattedDate = formatItemDate(item.dateOccurred, {
     month: 'long',
     day: 'numeric',
     year: 'numeric',

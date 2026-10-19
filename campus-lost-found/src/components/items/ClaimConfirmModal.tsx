@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { PackageCheck, X } from 'lucide-react'
-import type { Item } from '../types'
-import Button from './ui/Button'
+import type { Item } from '../../types'
+import Button from '../common/Button'
 
 interface ClaimConfirmModalProps {
   item: Item | null
@@ -117,4 +117,3 @@ export default function ClaimConfirmModal({
     </div>
   )
 }
-

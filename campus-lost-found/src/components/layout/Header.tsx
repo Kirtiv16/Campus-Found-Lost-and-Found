@@ -29,14 +29,14 @@ export default function Header({ onPost }: HeaderProps) {
         {/* Brand */}
         <a
           href="#"
-          className="flex items-center gap-3 text-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 rounded-lg py-1 select-none"
+          className="flex items-center gap-3 text-zinc-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 rounded-lg py-1 select-none"
           aria-label="Campus Found home"
         >
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-white shadow-[0_0_20px_rgba(139,92,246,0.3)] shrink-0">
+          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-zinc-900 shadow-[0_0_20px_rgba(139,92,246,0.3)] shrink-0">
             <SearchCheck className="w-5 h-5 stroke-[2.2]" />
           </div>
           <div className="flex items-baseline gap-1">
-            <span className="font-semibold text-base sm:text-lg tracking-tight text-zinc-100">campus</span>
+            <span className="font-semibold text-base sm:text-lg tracking-tight text-zinc-900">campus</span>
             <span className="font-semibold text-base sm:text-lg tracking-tight text-violet-400">found</span>
           </div>
         </a>

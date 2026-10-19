@@ -1,11 +1,11 @@
 export default function ItemCardSkeleton() {
   return (
     <div
-      className="flex flex-col bg-white rounded-2xl border border-zinc-200/80 shadow-xs overflow-hidden"
+      className="flex flex-col bg-[#11111a]/80 rounded-2xl border border-white/10 shadow-xs overflow-hidden"
       aria-hidden="true"
     >
       {/* Media skeleton matching aspect-video */}
-      <div className="relative aspect-video w-full bg-zinc-100 overflow-hidden shimmer-bg">
+      <div className="relative aspect-[16/10] w-full bg-[#171720] overflow-hidden shimmer-bg">
         <div className="absolute top-2.5 left-2.5 w-16 h-5 rounded-full bg-zinc-200/80" />
         <div className="absolute top-2.5 right-2.5 w-20 h-5 rounded-full bg-zinc-200/80" />
       </div>
@@ -30,7 +30,7 @@ export default function ItemCardSkeleton() {
         </div>
 
         {/* Card Footer matching exact border & button height */}
-        <div className="mt-4 pt-3 border-t border-zinc-100 flex items-center justify-between">
+        <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between">
           <div className="h-7 w-20 rounded-lg bg-zinc-200/70 shimmer-bg" />
           <div className="h-4 w-12 rounded bg-zinc-200/50 shimmer-bg" />
         </div>
