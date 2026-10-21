@@ -15,7 +15,7 @@ import PostItemModal from './components/PostItemModal'
 import MobileFilterSheet from './components/MobileFilterSheet'
 import ClaimConfirmModal from './components/ClaimConfirmModal'
 import Toast from './components/Toast'
-import { Heart, SearchCheck } from 'lucide-react'
+import { ArrowDown, Heart, PackageCheck, Plus, SearchCheck, Sparkles } from 'lucide-react'
 
 const locations = locationsData as Location[]
 
@@ -91,25 +91,97 @@ export default function App() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="border-b border-zinc-200/80 bg-zinc-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
-            <div className="max-w-2xl space-y-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-indigo-600">
-                Campus lost &amp; found
+        <section className="relative isolate overflow-hidden border-b border-white/[0.06] bg-[radial-gradient(ellipse_at_78%_12%,rgba(173,159,208,0.14),transparent_36%),linear-gradient(180deg,#11111a_0%,#0a0a10_100%)]">
+          <div className="pointer-events-none absolute -right-24 -top-44 h-[26rem] w-[26rem] rounded-full border border-white/[0.06] sm:right-[8%] sm:top-[-19rem] sm:h-[38rem] sm:w-[38rem]" />
+          <div className="pointer-events-none absolute -right-12 -top-32 h-[22rem] w-[22rem] rounded-full border border-white/[0.04] sm:right-[10%] sm:top-[-17rem] sm:h-[34rem] sm:w-[34rem]" />
+          <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 lg:px-8 lg:py-24">
+            <div className="max-w-2xl">
+              <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-indigo-300/15 bg-indigo-300/[0.07] px-3 py-1.5 text-xs font-medium tracking-wide text-indigo-200">
+                <Sparkles className="h-3.5 w-3.5" />
+                A little help goes a long way
               </p>
-              <h1 className="font-sans text-4xl sm:text-5xl font-semibold tracking-tight text-zinc-900 leading-tight text-balance">
-                Lost something?{' '}
-                <span className="text-zinc-500">Let’s get it back.</span>
+              <h1 className="font-display text-4xl font-semibold leading-[1.08] tracking-tight text-zinc-900 text-balance sm:text-5xl lg:text-6xl">
+                Lost something?
+                <br />
+                <span className="bg-gradient-to-r from-indigo-300 via-violet-200 to-sky-200 bg-clip-text text-transparent">
+                  Let’s get it back.
+                </span>
               </h1>
-              <p className="text-base text-zinc-500 leading-relaxed max-w-lg">
-                Browse recent posts or share an item you’ve found. A little help goes a long way.
+              <p className="mt-5 max-w-lg text-base leading-relaxed text-zinc-500 sm:text-lg">
+                Your campus community is looking out for you. Browse recent posts or help reunite
+                someone with an item you found.
               </p>
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+                <a
+                  href="#noticeboard"
+                  className="inline-flex h-11 items-center gap-2 rounded-xl bg-indigo-600 px-5 text-sm font-semibold text-white shadow-lg shadow-indigo-950/30 transition-all hover:-translate-y-0.5 hover:bg-indigo-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#11111a]"
+                >
+                  Browse the board
+                  <ArrowDown className="h-4 w-4" />
+                </a>
+                <button
+                  type="button"
+                  onClick={() => setPostOpen(true)}
+                  className="inline-flex h-11 items-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-5 text-sm font-semibold text-zinc-700 transition-colors hover:border-white/20 hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-300"
+                >
+                  <Plus className="h-4 w-4" />
+                  Post an item
+                </button>
+              </div>
+            </div>
+
+            <div className="relative mx-auto w-full max-w-md lg:ml-auto">
+              <div className="absolute -inset-5 rounded-[2rem] bg-indigo-400/[0.08] blur-2xl" />
+              <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#15151c]/90 p-5 shadow-2xl shadow-black/30 backdrop-blur sm:p-6">
+                <div className="flex items-center justify-between border-b border-white/[0.07] pb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-indigo-300/15 bg-indigo-300/[0.08] text-indigo-200">
+                      <SearchCheck className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-zinc-900">Community board</p>
+                      <p className="mt-0.5 text-xs text-zinc-500">A little closer to found</p>
+                    </div>
+                  </div>
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-300/10 bg-emerald-300/[0.06] px-2.5 py-1 text-[11px] font-medium text-emerald-300">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                    Live
+                  </span>
+                </div>
+                <div className="grid grid-cols-2 gap-3 pt-4">
+                  <div className="rounded-xl border border-white/[0.06] bg-white/[0.025] p-4">
+                    <p className="text-xs font-medium text-zinc-500">Items shared</p>
+                    <p className="mt-2 text-3xl font-semibold tracking-tight text-zinc-900 tabular-nums">
+                      {loading ? '—' : items.length}
+                    </p>
+                    <p className="mt-1 text-xs text-zinc-500">on your campus board</p>
+                  </div>
+                  <div className="rounded-xl border border-emerald-300/[0.09] bg-emerald-300/[0.035] p-4">
+                    <div className="flex items-center gap-1.5 text-xs font-medium text-emerald-300">
+                      <PackageCheck className="h-3.5 w-3.5" />
+                      Still looking
+                    </div>
+                    <p className="mt-2 text-3xl font-semibold tracking-tight text-zinc-900 tabular-nums">
+                      {loading ? '—' : items.filter((item) => item.status === 'open').length}
+                    </p>
+                    <p className="mt-1 text-xs text-zinc-500">ready for a helping hand</p>
+                  </div>
+                </div>
+                <div className="mt-3 flex items-center gap-3 rounded-xl border border-white/[0.06] bg-white/[0.025] p-3.5">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-sky-300/[0.08] text-sky-300">
+                    <Heart className="h-4 w-4" />
+                  </div>
+                  <p className="text-xs leading-relaxed text-zinc-500">
+                    Every post brings a lost item one step closer to home.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Noticeboard Section */}
-        <section ref={boardRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+        <section id="noticeboard" ref={boardRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 scroll-mt-32">
           {/* Sticky Filter Bar */}
           <FilterBar
             filters={filters}

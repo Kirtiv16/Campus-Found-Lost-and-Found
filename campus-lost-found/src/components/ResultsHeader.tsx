@@ -42,24 +42,27 @@ export default function ResultsHeader({
     })
 
   return (
-    <div className="pt-6 pb-4">
+    <div className="pt-7 pb-5">
       <div className="flex items-center justify-between gap-4">
         <div>
-          <h2 className="text-lg font-semibold tracking-tight text-zinc-900">
-            Recently posted
+          <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-indigo-300/80">
+            The noticeboard
+          </p>
+          <h2 className="text-xl font-semibold tracking-tight text-zinc-900 sm:text-2xl">
+            Explore the board
           </h2>
         </div>
 
         <div className="flex flex-col items-end gap-1.5 shrink-0">
           <p
-            className="text-xs sm:text-sm text-zinc-600"
+            className="inline-flex items-center gap-1.5 rounded-full border border-white/[0.07] bg-white/[0.035] px-3 py-1.5 text-xs text-zinc-500 sm:text-sm"
             aria-live="polite"
             aria-atomic="true"
           >
-            <strong className="text-base sm:text-lg font-semibold text-zinc-900 tabular-nums">
+            <strong className="text-sm font-semibold text-zinc-900 tabular-nums sm:text-base">
               {count}
             </strong>{' '}
-            {count === 1 ? 'item' : 'items'} found
+            {count === 1 ? 'item' : 'items'}
           </p>
 
           {filters.sort === 'nearest' && (

@@ -76,13 +76,13 @@ export default function ItemCard({
         }
       }}
       aria-label={`View ${item.title}, ${item.type} item`}
-      className={`group relative flex flex-col bg-white rounded-xl border border-zinc-200/80 transition-all duration-200 hover:-translate-y-1 hover:border-zinc-750 overflow-hidden cursor-pointer select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 animate-cardIn ${
+      className={`group relative flex flex-col bg-white rounded-2xl border border-white/[0.07] shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-indigo-300/20 hover:shadow-xl hover:shadow-black/20 overflow-hidden cursor-pointer select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 animate-cardIn ${
         highlighted ? 'ring-2 ring-indigo-500 shadow-md' : ''
       }`}
       style={{ animationDelay: `${Math.min(index * 30, 240)}ms` }}
     >
       {/* Media container */}
-      <div className="relative aspect-video w-full overflow-hidden bg-zinc-100">
+      <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#11111a] sm:aspect-video">
         {!broken ? (
           <img
             src={item.imageUrl}
@@ -92,9 +92,11 @@ export default function ItemCard({
             className="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-[1.02]"
           />
         ) : (
-          <div className="w-full h-full flex flex-col items-center justify-center gap-1.5 text-zinc-400 bg-zinc-50/80">
-            <CategoryIcon className="w-8 h-8 text-zinc-300 stroke-[1.6]" />
-            <span className="text-[11px] font-medium text-zinc-500">{categoryLabel(item.category)}</span>
+          <div className="relative w-full h-full flex flex-col items-center justify-center gap-2 text-zinc-400 bg-[radial-gradient(circle_at_50%_38%,rgba(173,159,208,0.11),transparent_42%),linear-gradient(135deg,#15151c,#101018)]">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/[0.07] bg-white/[0.035] shadow-inner">
+              <CategoryIcon className="w-7 h-7 text-indigo-200/75 stroke-[1.5]" />
+            </div>
+            <span className="text-[11px] font-medium tracking-wide text-zinc-500">{categoryLabel(item.category)}</span>
           </div>
         )}
 
@@ -108,17 +110,17 @@ export default function ItemCard({
       </div>
 
       {/* Content */}
-      <div className="p-4 flex-1 flex flex-col justify-between">
+      <div className="p-4 flex-1 flex flex-col justify-between sm:p-5">
         <div>
           {/* Title with 2-line clamp */}
-          <h3 className="text-sm font-semibold text-zinc-900 leading-snug line-clamp-2 text-balance group-hover:text-indigo-600 transition-colors mb-2">
+          <h3 className="text-[15px] font-semibold text-zinc-900 leading-snug line-clamp-2 text-balance group-hover:text-indigo-300 transition-colors mb-3">
             {item.title}
           </h3>
 
           {/* Meta row: category · location · date */}
-          <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-xs text-zinc-400">
-            <span className="inline-flex items-center gap-1 font-medium text-zinc-400">
-              <CategoryIcon className="w-3.5 h-3.5 text-zinc-400 shrink-0" />
+          <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1.5 text-xs text-zinc-400">
+            <span className="inline-flex items-center gap-1 font-medium text-zinc-500">
+              <CategoryIcon className="w-3.5 h-3.5 text-zinc-500 shrink-0" />
               <span>{categoryLabel(item.category)}</span>
             </span>
             <span className="text-zinc-300 font-normal">·</span>
@@ -142,7 +144,7 @@ export default function ItemCard({
         </div>
 
         {/* Card Footer */}
-        <div className="mt-4 pt-3 border-t border-zinc-100">
+        <div className="mt-5 pt-3 border-t border-white/[0.06]">
           {isClaimable ? (
             <button
               type="button"

@@ -42,7 +42,7 @@ export default function FilterBar({
   }
 
   return (
-    <div className="sticky top-16 z-20 -mx-4 px-4 pt-3 pb-3 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 bg-[#0a0a10]/85 backdrop-blur-md border-b border-zinc-200/60">
+    <div className="sticky top-16 z-20 -mx-4 px-4 pt-3 pb-3 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 bg-[#0a0a10]/90 backdrop-blur-xl border-b border-white/[0.06] shadow-[0_10px_30px_rgba(0,0,0,0.12)]">
       <div className="flex flex-wrap items-center gap-3 xl:flex-nowrap">
         {/* Search input with leading icon, spinner, and clear button */}
         <div className="relative flex-1 basis-[280px] min-w-0">
